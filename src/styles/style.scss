@@ -1,5 +1,36 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100;400&family=Roboto:wght@300&display=swap");
+
+$primary: #0290ff;
+$bg-white: #fff;
+$bg-white1: #f5f6fa;
+$color1-li: #121212;
+$color2-li: #5d5d5d;
+
 * {
   body {
-    background-color: aqua;
+    font-family: "Montserrat", sans-serif;
+    .app {
+      background-color: $bg-white1;
+      height: 100vh;
+      .navbar {
+        background-color: $bg-white;
+        margin: 0;
+        padding: 1.438rem 6.188rem 1.688rem 6.25rem;
+        .logo {
+          width: 15rem;
+          height: 2.313rem;
+          margin: 0.375rem 2.938rem 0.125rem 0;
+          font-size: 1.875rem;
+          font-weight: bold;
+          font-stretch: normal;
+          font-style: normal;
+          line-height: normal;
+          letter-spacing: normal;
+          color: $primary;
+        }
+      }
+    }
   }
 }
+
+@import "~bootstrap/scss/bootstrap.scss";

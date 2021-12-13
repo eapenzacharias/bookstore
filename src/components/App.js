@@ -1,14 +1,14 @@
 import '../styles/style.scss';
 import { Routes, Route } from 'react-router-dom';
 import Navbar from './Navbar';
-import Books from './Book';
+import Books from './Books';
 import Categories from './Categories';
 
 const App = () => {
   const NotMatch = () => (
     <>
       <div>
-        NotMatch
+        No Match Found for the page
       </div>
     </>
   );
@@ -16,7 +16,7 @@ const App = () => {
   return (
     <>
       <Navbar />
-      <div className="container" data-testid="main">
+      <div data-testid="main">
         <Routes>
           <Route path="/" element={<Books />} />
           <Route path="/categories" element={<Categories />} />

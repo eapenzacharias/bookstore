@@ -7,7 +7,9 @@ import App from './components/App';
 ReactDOM.render(
   <React.StrictMode>
     <Router>
-      <App />
+      <div className="container-fluid app">
+        <App />
+      </div>
     </Router>
   </React.StrictMode>,
   document.getElementById('root'),
