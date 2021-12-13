@@ -1,7 +1,7 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React from 'react';
 import { Link as NavLink } from 'react-router-dom';
-import { faUser } from '@fortawesome/free-solid-svg-icons';
+import { faBars, faUser } from '@fortawesome/free-solid-svg-icons';
 
 const Navbar = () => {
   const links = [
@@ -26,13 +26,13 @@ const Navbar = () => {
         <button
           className="navbar-toggler"
           type="button"
-          data-mdb-toggle="collapse"
-          data-mdb-target="#navbarSupportedContent"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
           aria-controls="navbarSupportedContent"
           aria-expanded="false"
           aria-label="Toggle navigation"
         >
-          <i className="fas fa-bars" />
+          <FontAwesomeIcon icon={faBars} />
         </button>
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
           <ul className="navbar-nav me-auto mb-2 mb-lg-0">

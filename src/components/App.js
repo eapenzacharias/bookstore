@@ -1,5 +1,7 @@
 import '../styles/style.scss';
 import { Routes, Route } from 'react-router-dom';
+// eslint-disable-next-line no-unused-vars
+import { Popover } from 'bootstrap';
 import Navbar from './Navbar';
 import Books from './Books';
 import Categories from './Categories';
