@@ -27,10 +27,10 @@ const AddBookForm = () => {
         <h2>ADD NEW BOOK</h2>
         <form className="row g-3">
           <div className="col-md-7">
-            <input type="text" className="form-control" placeholder="Book Title" id="inputEmail4" />
+            <input type="text" className="form-control" placeholder="Book Title" id="bookTitle" />
           </div>
           <div className="col-md-3">
-            <select id="inputState" className="form-select">
+            <select id="bookCategory" className="form-select">
               <option selected>Category</option>
               {categories.map((item) => (
                 <option key={item.id}>{item.name}</option>
