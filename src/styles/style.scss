@@ -15,6 +15,7 @@ $color2-li: #5d5d5d;
       .navbar {
         background-color: $bg-white;
         margin: 0;
+        margin-bottom: 2rem;
         padding: 1.5rem 0 1.6rem 0;
         .logo {
           width: 15rem;
@@ -27,6 +28,12 @@ $color2-li: #5d5d5d;
           line-height: normal;
           letter-spacing: normal;
           color: $primary;
+        }
+      }
+
+      .books {
+        .book {
+          margin: 1rem auto;
         }
       }
     }

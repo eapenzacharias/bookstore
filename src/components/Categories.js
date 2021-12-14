@@ -1,7 +1,7 @@
 const Categories = () => (
   <>
     <div>
-      Categories
+      Under construction
     </div>
   </>
 );
