@@ -1,3 +1,4 @@
+import AddBookForm from './AddBookForm';
 import Book from './Book';
 
 const Books = () => {
@@ -20,6 +21,7 @@ const Books = () => {
           <Book key={book.id} title={book.title} author={book.author} />
         ))}
       </div>
+      <AddBookForm />
     </>
   );
 };

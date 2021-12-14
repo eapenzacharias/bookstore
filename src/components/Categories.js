@@ -1,7 +1,7 @@
 const Categories = () => (
   <>
-    <div>
-      Under construction
+    <div className="alert alert-warning">
+      <h2>Under construction</h2>
     </div>
   </>
 );
