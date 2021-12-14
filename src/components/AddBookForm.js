@@ -38,11 +38,14 @@ const AddBookForm = () => {
   };
 
   const handleAuthorChange = (e) => {
+    e.preventDefault();
     setAuthor(e.target.value);
   };
 
   const handleCategoryChange = (e) => {
-    setCategory(e.target.value);
+    e.preventDefault();
+
+    setCategory(e.target.key);
   };
 
   const handleSubmit = (e) => {
@@ -74,9 +77,8 @@ const AddBookForm = () => {
           </div>
           <div className="col-md-2">
             <select id="bookCategory" className="form-select" value={category} onChange={handleCategoryChange}>
-              <option selected>Category</option>
               {categories.map((item) => (
-                <option key={item.id}>{item.name}</option>
+                <option key={item.id} value={item.name}>{item.name}</option>
               ))}
             </select>
           </div>
