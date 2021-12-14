@@ -1,3 +1,8 @@
+import React, { useState } from 'react';
+import { v4 as id } from 'uuid';
+import { useDispatch } from 'react-redux';
+import { addBook } from '../redux/books/books';
+
 const AddBookForm = () => {
   const categories = [
     {
@@ -21,16 +26,54 @@ const AddBookForm = () => {
       name: 'Fantasy',
     },
   ];
+  const dispatch = useDispatch();
+
+  const [title, setTitle] = useState('');
+  const [author, setAuthor] = useState('');
+  const [category, setCategory] = useState('');
+
+  const handleTitleChange = (e) => {
+    e.preventDefault();
+    setTitle(e.target.value);
+  };
+
+  const handleAuthorChange = (e) => {
+    setAuthor(e.target.value);
+  };
+
+  const handleCategoryChange = (e) => {
+    setCategory(e.target.value);
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    const newBook = {
+      id: id(),
+      title,
+      author,
+      category,
+    };
+
+    dispatch(addBook(newBook));
+    setTitle('');
+    setAuthor('');
+    setCategory('Category');
+  };
+
   return (
     <>
       <div className="form-container container">
         <h2>ADD NEW BOOK</h2>
-        <form className="row g-3">
-          <div className="col-md-7">
-            <input type="text" className="form-control" placeholder="Book Title" id="bookTitle" />
+        <form className="row g-3" onSubmit={handleSubmit}>
+          <div className="col-md-5">
+            <input type="text" className="form-control" value={title} placeholder="Book Title" id="bookTitle" onChange={handleTitleChange} />
           </div>
           <div className="col-md-3">
-            <select id="bookCategory" className="form-select">
+            <input type="text" className="form-control" value={author} placeholder="Book Title" id="authorTitle" onChange={handleAuthorChange} />
+          </div>
+          <div className="col-md-2">
+            <select id="bookCategory" className="form-select" value={category} onChange={handleCategoryChange}>
               <option selected>Category</option>
               {categories.map((item) => (
                 <option key={item.id}>{item.name}</option>
