@@ -45,7 +45,6 @@ const AddBookForm = () => {
   const handleCategoryChange = (e) => {
     e.preventDefault();
     setCategory(e.target.value);
-    console.log(e.target.value);
   };
 
   const handleSubmit = (e) => {
