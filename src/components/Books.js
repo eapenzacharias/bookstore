@@ -1,24 +1,20 @@
+import { useSelector } from 'react-redux';
 import AddBookForm from './AddBookForm';
 import Book from './Book';
 
 const Books = () => {
-  const books = [
-    {
-      id: 1,
-      author: 'John Doe',
-      title: 'Lorem Ipsum.',
-    },
-    {
-      id: 2,
-      author: 'Jane Doe',
-      title: 'Dolor Sit Amet',
-    },
-  ];
+  const books = useSelector((state) => state.bookReducer);
   return (
     <>
       <div className="books">
         {books.map((book) => (
-          <Book key={book.id} title={book.title} author={book.author} />
+          <Book
+            key={book.id}
+            id={book.id}
+            title={book.title}
+            author={book.author}
+            category={book.category}
+          />
         ))}
       </div>
       <AddBookForm />
