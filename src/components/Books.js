@@ -4,7 +4,6 @@ import Book from './Book';
 
 const Books = () => {
   const books = useSelector((state) => state.bookReducer);
-  console.log(books);
   return (
     <>
       <div className="books">
@@ -14,7 +13,7 @@ const Books = () => {
             id={book.id}
             title={book.title}
             author={book.author}
-            catagory={book.catagory}
+            category={book.category}
           />
         ))}
       </div>

@@ -44,8 +44,8 @@ const AddBookForm = () => {
 
   const handleCategoryChange = (e) => {
     e.preventDefault();
-
-    setCategory(e.target.key);
+    setCategory(e.target.value);
+    console.log(e.target.value);
   };
 
   const handleSubmit = (e) => {
@@ -70,13 +70,21 @@ const AddBookForm = () => {
         <h2>ADD NEW BOOK</h2>
         <form className="row g-3" onSubmit={handleSubmit}>
           <div className="col-md-5">
-            <input type="text" className="form-control" value={title} placeholder="Book Title" id="bookTitle" onChange={handleTitleChange} />
+            <input type="text" className="form-control" value={title} placeholder="Book Title" id="bookTitle" onChange={handleTitleChange} required />
           </div>
           <div className="col-md-3">
-            <input type="text" className="form-control" value={author} placeholder="Book Title" id="authorTitle" onChange={handleAuthorChange} />
+            <input type="text" className="form-control" value={author} placeholder="Book Title" id="authorTitle" onChange={handleAuthorChange} required />
           </div>
           <div className="col-md-2">
-            <select id="bookCategory" className="form-select" value={category} onChange={handleCategoryChange}>
+            <select
+              id="bookCategory"
+              className="form-select"
+              placeholder="Category"
+              value={category}
+              onChange={handleCategoryChange}
+              required
+            >
+              <option>Category</option>
               {categories.map((item) => (
                 <option key={item.id} value={item.name}>{item.name}</option>
               ))}

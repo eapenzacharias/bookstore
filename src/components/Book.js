@@ -21,7 +21,7 @@ const Book = (props) => {
             {author}
           </div>
           <div className="card-body">
-            <h4>{category}</h4>
+            <h5>{category}</h5>
             <button type="button" className="btn btn-primary" onClick={() => deleteBook(id)}>Remove</button>
           </div>
         </div>
