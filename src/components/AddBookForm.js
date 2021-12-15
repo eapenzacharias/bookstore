@@ -53,7 +53,6 @@ const AddBookForm = () => {
     const newBook = {
       id: id(),
       title,
-      author,
       category,
     };
 
@@ -69,10 +68,26 @@ const AddBookForm = () => {
         <h2>ADD NEW BOOK</h2>
         <form className="row g-3" onSubmit={handleSubmit}>
           <div className="col-md-5">
-            <input type="text" className="form-control" value={title} placeholder="Book Title" id="bookTitle" onChange={handleTitleChange} required />
+            <input
+              type="text"
+              className="form-control"
+              value={title}
+              placeholder="Book Title"
+              id="bookTitle"
+              onChange={handleTitleChange}
+              required
+            />
           </div>
           <div className="col-md-3">
-            <input type="text" className="form-control" value={author} placeholder="Book Title" id="authorTitle" onChange={handleAuthorChange} required />
+            <input
+              type="text"
+              className="form-control"
+              value={author}
+              placeholder="Book Title"
+              id="authorTitle"
+              onChange={handleAuthorChange}
+              required
+            />
           </div>
           <div className="col-md-2">
             <select
