@@ -2,6 +2,51 @@ import PropTypes from 'prop-types';
 import { useDispatch } from 'react-redux';
 import { removeBook } from '../redux/books/books';
 
+const Progress = () => {
+  const percent = Math.floor(Math.random() * 100);
+  return (
+    <>
+      <div className="row align-items-center">
+        <div className="col-4">
+          <div className="ko-progress-circle" data-progress={percent}>
+            <div className="ko-circle">
+              <div className="full ko-progress-circle__slice">
+                <div className="ko-progress-circle__fill" />
+              </div>
+              <div className="ko-progress-circle__slice">
+                <div className="ko-progress-circle__fill" />
+                <div className="ko-progress-circle__fill ko-progress-circle__bar" />
+              </div>
+            </div>
+            <div className="ko-progress-circle__overlay" />
+          </div>
+        </div>
+        <div className="col-6">
+          <h5>{`${percent} %`}</h5>
+          <span>Completed</span>
+        </div>
+      </div>
+    </>
+  );
+};
+
+const Chapter = () => {
+  const section = 'The Vanishing Glass';
+  return (
+    <>
+      <div className="row align-items-center">
+        <div className="col">
+          <h5>CURRENT CHAPTER</h5>
+          <h4>
+            {section}
+          </h4>
+          <button type="button" className="btn btn-primary"> UPDATE PROGRESS</button>
+        </div>
+      </div>
+    </>
+  );
+};
+
 const Book = (props) => {
   const dispatch = useDispatch();
   const {
@@ -10,27 +55,6 @@ const Book = (props) => {
 
   const deleteBook = (book) => {
     dispatch(removeBook(book));
-  };
-
-  // eslint-disable-next-line no-unused-vars
-  const Progress = () => {
-    const percent = Math.floor(Math.random() * 100);
-    return (
-      <>
-        <div className="ko-progress-circle" data-progress={percent}>
-          <div className="ko-circle">
-            <div className="full ko-progress-circle__slice">
-              <div className="ko-progress-circle__fill" />
-            </div>
-            <div className="ko-progress-circle__slice">
-              <div className="ko-progress-circle__fill" />
-              <div className="ko-progress-circle__fill ko-progress-circle__bar" />
-            </div>
-          </div>
-          <div className="ko-progress-circle__overlay" />
-        </div>
-      </>
-    );
   };
 
   return (
@@ -60,6 +84,9 @@ const Book = (props) => {
             </div>
             <div className="col-md-6 col-lg-3">
               <Progress />
+            </div>
+            <div className="col-md-6 col-lg-3">
+              <Chapter />
             </div>
           </div>
         </div>
