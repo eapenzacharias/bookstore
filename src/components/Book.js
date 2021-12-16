@@ -22,8 +22,8 @@ const Progress = () => {
           </div>
         </div>
         <div className="col-6">
-          <h5>{`${percent} %`}</h5>
-          <span>Completed</span>
+          <div className="percent">{`${percent} %`}</div>
+          <span className="completed">Completed</span>
         </div>
       </div>
     </>
@@ -36,8 +36,8 @@ const Chapter = () => {
     <>
       <div className="row align-items-center">
         <div className="col">
-          <h5>CURRENT CHAPTER</h5>
-          <h4>
+          <h5 className="c-chapter">CURRENT CHAPTER</h5>
+          <h4 className="chapter">
             {section}
           </h4>
           <button type="button" className="btn btn-primary"> UPDATE PROGRESS</button>
@@ -61,12 +61,12 @@ const Book = (props) => {
     <>
       <div>
         <div className="book container">
-          <div className="row">
+          <div className="row align-items-center">
             <div className="col-lg-5">
               <div className="col">
                 <h5>{category}</h5>
-                <h3>{title}</h3>
-                <div className="col-12">John Doe</div>
+                <h2>{title}</h2>
+                <div className="col-12 author">John Doe</div>
               </div>
               <div className="btn-group">
                 <button type="button" className="btn">Comments</button>
@@ -82,8 +82,11 @@ const Book = (props) => {
                 <button type="button" className="btn">Edit</button>
               </div>
             </div>
-            <div className="col-md-6 col-lg-3">
+            <div className="col-md-5 col-lg-3">
               <Progress />
+            </div>
+            <div className="col-md-1 col-lg-1 d-sm-none d-md-block">
+              <div className="line-1" />
             </div>
             <div className="col-md-6 col-lg-3">
               <Chapter />

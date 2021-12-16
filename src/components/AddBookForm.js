@@ -57,10 +57,10 @@ const AddBookForm = () => {
 
   return (
     <>
-      <div className="form-container container">
+      <div className="form-container row">
         <h2>ADD NEW BOOK</h2>
         <form className="row g-3" onSubmit={handleSubmit}>
-          <div className="col">
+          <div className="col-md-6">
             <input
               type="text"
               className="form-control"
@@ -71,7 +71,7 @@ const AddBookForm = () => {
               required
             />
           </div>
-          <div className="col-md-3">
+          <div className="col-md-4">
             <select
               id="bookCategory"
               className="form-select"
@@ -86,8 +86,8 @@ const AddBookForm = () => {
               ))}
             </select>
           </div>
-          <div className="col-md-1">
-            <button type="submit" className="btn btn-primary col">Submit</button>
+          <div className="col-md-2">
+            <button type="submit" className="btn btn-primary col-12">Submit</button>
           </div>
         </form>
       </div>
