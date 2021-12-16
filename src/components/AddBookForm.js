@@ -29,17 +29,11 @@ const AddBookForm = () => {
   const dispatch = useDispatch();
 
   const [title, setTitle] = useState('');
-  const [author, setAuthor] = useState('');
   const [category, setCategory] = useState('');
 
   const handleTitleChange = (e) => {
     e.preventDefault();
     setTitle(e.target.value);
-  };
-
-  const handleAuthorChange = (e) => {
-    e.preventDefault();
-    setAuthor(e.target.value);
   };
 
   const handleCategoryChange = (e) => {
@@ -58,7 +52,6 @@ const AddBookForm = () => {
 
     dispatch(addBook(newBook));
     setTitle('');
-    setAuthor('');
     setCategory('Category');
   };
 
@@ -78,7 +71,7 @@ const AddBookForm = () => {
               required
             />
           </div>
-          <div className="col-md-3">
+          {/* <div className="col-md-3">
             <input
               type="text"
               className="form-control"
@@ -88,7 +81,7 @@ const AddBookForm = () => {
               onChange={handleAuthorChange}
               required
             />
-          </div>
+          </div> */}
           <div className="col-md-2">
             <select
               id="bookCategory"

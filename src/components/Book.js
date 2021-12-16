@@ -8,6 +8,8 @@ const Book = (props) => {
     id, title, category,
   } = props;
 
+  console.log(props);
+
   const deleteBook = (book) => {
     dispatch(removeBook(book));
   };
