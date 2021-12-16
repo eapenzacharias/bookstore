@@ -12,15 +12,38 @@ const Book = (props) => {
     dispatch(removeBook(book));
   };
 
+  // eslint-disable-next-line no-unused-vars
+  const Progress = () => {
+    const percent = Math.floor(Math.random() * 100);
+    return (
+      <>
+        <div className="ko-progress-circle" data-progress={percent}>
+          <div className="ko-circle">
+            <div className="full ko-progress-circle__slice">
+              <div className="ko-progress-circle__fill" />
+            </div>
+            <div className="ko-progress-circle__slice">
+              <div className="ko-progress-circle__fill" />
+              <div className="ko-progress-circle__fill ko-progress-circle__bar" />
+            </div>
+          </div>
+          <div className="ko-progress-circle__overlay" />
+        </div>
+      </>
+    );
+  };
+
   return (
     <>
       <div>
-        <div className="book card">
-          <div className="card-body">
+        <div className="book container">
+          <div className="row">
             <div className="col-lg-5">
-              <h5>{category}</h5>
-              <h3>{title}</h3>
-              <div className="col-12">John Doe</div>
+              <div className="col">
+                <h5>{category}</h5>
+                <h3>{title}</h3>
+                <div className="col-12">John Doe</div>
+              </div>
               <div className="btn-group">
                 <button type="button" className="btn">Comments</button>
                 <span className="line-2" />
@@ -34,6 +57,9 @@ const Book = (props) => {
                 <span className="line-2" />
                 <button type="button" className="btn">Edit</button>
               </div>
+            </div>
+            <div className="col-md-6 col-lg-3">
+              <Progress />
             </div>
           </div>
         </div>
