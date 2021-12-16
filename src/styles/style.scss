@@ -13,6 +13,7 @@ $color2-li: #5d5d5d;
     .app {
       background-color: $bg-white1;
       height: 100vh;
+      overflow-y: auto;
 
       .navbar {
         background-color: $bg-white;
@@ -39,6 +40,10 @@ $color2-li: #5d5d5d;
           margin: 1rem auto;
         }
       }
+    }
+
+    .form-container {
+      margin: 2rem auto;
     }
   }
 }
