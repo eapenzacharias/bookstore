@@ -16,12 +16,25 @@ const Book = (props) => {
     <>
       <div>
         <div className="book card">
-          <div className="card-header">
-            <h3>{title}</h3>
-          </div>
           <div className="card-body">
-            <h5>{category}</h5>
-            <button type="button" className="btn btn-primary" onClick={() => deleteBook(id)}>Remove</button>
+            <div className="col-lg-5">
+              <h5>{category}</h5>
+              <h3>{title}</h3>
+              <div className="col-12">John Doe</div>
+              <div className="btn-group">
+                <button type="button" className="btn">Comments</button>
+                <span className="line-2" />
+                <button
+                  type="button"
+                  className="btn"
+                  onClick={() => deleteBook(id)}
+                >
+                  Remove
+                </button>
+                <span className="line-2" />
+                <button type="button" className="btn">Edit</button>
+              </div>
+            </div>
           </div>
         </div>
       </div>

@@ -5,6 +5,7 @@ $bg-white: #fff;
 $bg-white1: #f5f6fa;
 $color1-li: #121212;
 $color2-li: #5d5d5d;
+$color-border: #0000000d;
 
 * {
   body {
@@ -38,6 +39,12 @@ $color2-li: #5d5d5d;
       .books {
         .book {
           margin: 1rem auto;
+        }
+        .line-2 {
+          width: 0.125rem;
+          height: 1.5rem;
+          margin: 0.75rem 1.063rem 0 0.938rem;
+          border: solid 1px $color-border;
         }
       }
     }
