@@ -52,7 +52,7 @@ const AddBookForm = () => {
 
     dispatch(addBook(newBook));
     setTitle('');
-    setCategory('Category');
+    setCategory('');
   };
 
   return (
@@ -71,17 +71,6 @@ const AddBookForm = () => {
               required
             />
           </div>
-          {/* <div className="col-md-3">
-            <input
-              type="text"
-              className="form-control"
-              value={author}
-              placeholder="Book Title"
-              id="authorTitle"
-              onChange={handleAuthorChange}
-              required
-            />
-          </div> */}
           <div className="col-md-2">
             <select
               id="bookCategory"
@@ -91,7 +80,7 @@ const AddBookForm = () => {
               onChange={handleCategoryChange}
               required
             >
-              <option>Category</option>
+              <option value="" disabled hidden>Category</option>
               {categories.map((item) => (
                 <option key={item.id} value={item.name}>{item.name}</option>
               ))}

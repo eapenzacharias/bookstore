@@ -10,7 +10,6 @@ const Books = () => {
     dispatch(getBooks());
   }, []);
   const books = useSelector((state) => state.bookReducer);
-  console.log(books);
   return (
     <>
       <div className="books">

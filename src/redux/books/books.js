@@ -10,13 +10,11 @@ const initialState = [];
 export const getBooks = () => async (dispatch) => {
   const result = await axios.get(url);
   const books = result.data;
-  console.log(books);
   const allBooks = Object.entries(books);
   const fetchedBooks = [];
-  allBooks.forEach(([key, value]) => {
+  allBooks.forEach(([key, book]) => {
     const id = key;
-    const { title } = value[0];
-    const { category } = value[0];
+    const { title, category } = book[0];
     fetchedBooks.push({ id, title, category });
   });
   dispatch({
@@ -39,19 +37,29 @@ export const addBook = ({ id, title, category }) => async (dispatch) => {
   }
 };
 
-export const removeBook = (payload) => ({
-  type: REMOVE_BOOK,
-  payload,
-});
+export const removeBook = (id) => async (dispatch) => {
+  const result = await axios.delete(`${url}${id}`, {
+    headers: {
+      'content-type': 'application/json',
+    },
+  });
+  const deleted = await result.data;
+  if (deleted) {
+    dispatch({
+      type: REMOVE_BOOK,
+      id,
+    });
+  }
+};
 
 const reducer = (state = initialState, action) => {
   switch (action.type) {
     case GET_BOOKS:
       return [...action.fetchedBooks];
     case ADD_BOOK:
-      return [...state, action.payload];
+      return [...state, action.book];
     case REMOVE_BOOK:
-      return state.filter((book) => book.id !== action.payload);
+      return state.filter((book) => book.id !== action.id);
     default:
       return state;
   }
