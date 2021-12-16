@@ -29,17 +29,11 @@ const AddBookForm = () => {
   const dispatch = useDispatch();
 
   const [title, setTitle] = useState('');
-  const [author, setAuthor] = useState('');
   const [category, setCategory] = useState('');
 
   const handleTitleChange = (e) => {
     e.preventDefault();
     setTitle(e.target.value);
-  };
-
-  const handleAuthorChange = (e) => {
-    e.preventDefault();
-    setAuthor(e.target.value);
   };
 
   const handleCategoryChange = (e) => {
@@ -53,14 +47,12 @@ const AddBookForm = () => {
     const newBook = {
       id: id(),
       title,
-      author,
       category,
     };
 
     dispatch(addBook(newBook));
     setTitle('');
-    setAuthor('');
-    setCategory('Category');
+    setCategory('');
   };
 
   return (
@@ -69,10 +61,15 @@ const AddBookForm = () => {
         <h2>ADD NEW BOOK</h2>
         <form className="row g-3" onSubmit={handleSubmit}>
           <div className="col-md-5">
-            <input type="text" className="form-control" value={title} placeholder="Book Title" id="bookTitle" onChange={handleTitleChange} required />
-          </div>
-          <div className="col-md-3">
-            <input type="text" className="form-control" value={author} placeholder="Book Title" id="authorTitle" onChange={handleAuthorChange} required />
+            <input
+              type="text"
+              className="form-control"
+              value={title}
+              placeholder="Book Title"
+              id="bookTitle"
+              onChange={handleTitleChange}
+              required
+            />
           </div>
           <div className="col-md-2">
             <select
@@ -83,7 +80,7 @@ const AddBookForm = () => {
               onChange={handleCategoryChange}
               required
             >
-              <option>Category</option>
+              <option value="" disabled hidden>Category</option>
               {categories.map((item) => (
                 <option key={item.id} value={item.name}>{item.name}</option>
               ))}
