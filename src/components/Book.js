@@ -7,7 +7,7 @@ const Progress = () => {
   return (
     <>
       <div className="row align-items-center">
-        <div className="col-4">
+        <div className="col-md-6">
           <div className="ko-progress-circle" data-progress={percent}>
             <div className="ko-circle">
               <div className="full ko-progress-circle__slice">
@@ -64,8 +64,8 @@ const Book = (props) => {
           <div className="row align-items-center">
             <div className="col-lg-5">
               <div className="col">
-                <h5>{category}</h5>
-                <h2>{title}</h2>
+                <h5>{`${category}`}</h5>
+                <h2>{`${title}`}</h2>
                 <div className="col-12 author">John Doe</div>
               </div>
               <div className="btn-group">
@@ -85,7 +85,7 @@ const Book = (props) => {
             <div className="col-md-5 col-lg-3">
               <Progress />
             </div>
-            <div className="col-md-1 col-lg-1 d-sm-none d-md-block">
+            <div className="col-md-1 col-lg-1 d-none d-md-block">
               <div className="line-1" />
             </div>
             <div className="col-md-6 col-lg-3">

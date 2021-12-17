@@ -35,6 +35,16 @@ $color-border: #0000000d;
           letter-spacing: normal;
           color: $primary;
         }
+        .login {
+          margin: 0 1rem;
+          height: 2.5rem;
+          width: 2.5rem;
+          border: solid 1px $color-border;
+          border-radius: 1.25rem;
+          svg {
+            margin: 0.7rem 0.77rem;
+          }
+        }
       }
 
       .books {
@@ -42,7 +52,7 @@ $color-border: #0000000d;
           margin: 1rem auto;
           background-color: $bg-white;
           border: solid 1px $white2;
-          border-radius: 4px;
+          border-radius: 0.5rem;
           padding: 2rem 1.7rem;
           margin: 2rem auto;
           h2 {
