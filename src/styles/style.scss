@@ -1,14 +1,44 @@
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100;400&family=Roboto:wght@300&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lora:wght@100;400&family=Montserrat:wght@300;500&display=swap");
 
 $primary: #0290ff;
 $bg-white: #fff;
 $bg-white1: #f5f6fa;
+$white2: #e8e8e8;
 $color1-li: #121212;
 $color2-li: #5d5d5d;
+$color-border: #0000000d;
 
 * {
   body {
     font-family: "Montserrat", sans-serif;
+
+    .form-container {
+      margin: 3.5rem auto;
+      padding-top: 3rem;
+      border-top: solid 1px $color-border;
+
+      h2 {
+        font-size: 1.25rem;
+        font-weight: bold;
+        opacity: 0.7;
+      }
+
+      form {
+        margin-top: 0;
+
+        input,
+        select,
+        button {
+          height: 2.813rem;
+          color: $color2-li;
+        }
+
+        .btn-primary {
+          color: #fff;
+          font-weight: 600;
+        }
+      }
+    }
 
     .app {
       background-color: $bg-white1;
@@ -33,17 +63,172 @@ $color2-li: #5d5d5d;
           letter-spacing: normal;
           color: $primary;
         }
+
+        .login {
+          margin: 0 1rem;
+          height: 2.5rem;
+          width: 2.5rem;
+          border: solid 1px $color-border;
+          border-radius: 1.25rem;
+
+          svg {
+            margin: 0.7rem 0.77rem;
+          }
+        }
       }
 
       .books {
         .book {
-          margin: 1rem auto;
+          background-color: $bg-white;
+          border: solid 1px $white2;
+          border-radius: 0.5rem;
+          padding: 2rem 1.7rem;
+          margin: 2rem auto;
+
+          h2 {
+            font-family: "Lora", serif;
+            font-size: 1.375rem;
+            font-weight: bold;
+            margin-bottom: 0;
+          }
+
+          h5 {
+            color: $color1-li;
+            opacity: 0.5;
+            font-size: 0.875rem;
+            font-weight: bold;
+          }
+
+          .author {
+            font-size: 0.875rem;
+            font-family: "Lora", serif;
+            color: #4386bf;
+            margin-bottom: 1rem;
+          }
+
+          .btn-group {
+            margin-left: -0.7rem;
+
+            .btn {
+              color: #4386bf;
+              font-size: 0.875rem;
+              font-family: "Lora", serif;
+            }
+          }
+
+          .percent {
+            font-size: 2rem;
+            color: $color1-li;
+          }
+
+          .completed {
+            opacity: 0.5;
+            font-size: 0.875rem;
+          }
+
+          .c-chapter {
+            opacity: 0.5;
+            font-family: "Lora", serif;
+            font-size: 0.813rem;
+          }
+
+          .chapter {
+            font-family: "Lora", serif;
+            font-size: 1rem;
+          }
+
+          .btn-primary {
+            margin-top: 1.7rem;
+            width: 11.5rem;
+            height: 2.063rem;
+            font-family: "Lora", serif;
+            font-size: 0.813rem;
+            color: #fff;
+          }
+        }
+
+        .line-1 {
+          width: 0.125rem;
+          height: 4.375rem;
+          border: solid 1px $color-border;
+        }
+
+        .line-2 {
+          width: 0.125rem;
+          height: 1.5rem;
+          margin: 0.5rem 0 0 0;
+          border: solid 1px $color-border;
+        }
+        $circle-size: 5rem;
+        $circle-background: #d9d9d9;
+        $circle-color: linear-gradient(
+          90deg,
+          rgba(48, 123, 190, 1) 0%,
+          rgba(55, 156, 246, 1) 50%,
+          rgba(48, 123, 190, 1) 50%,
+          rgba(55, 156, 246, 1) 100%
+        );
+        //linear-gradient(#307bbe, #379cf6);
+        $inset-size: 4.3rem;
+        $inset-color: #fff;
+        $transition-length: 1s;
+
+        .ko-progress-circle {
+          margin: 20px auto;
+          width: $circle-size;
+          height: $circle-size;
+          position: relative;
+          background-color: $circle-background;
+          border-radius: 50%;
+
+          .ko-progress-circle__slice,
+          .ko-progress-circle__fill {
+            width: $circle-size;
+            height: $circle-size;
+            position: absolute;
+            -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
+            transition: transform $transition-length;
+            border-radius: 50%;
+          }
+
+          .ko-progress-circle__slice {
+            clip: rect(0, $circle-size, $circle-size, $circle-size/2);
+
+            .ko-progress-circle__fill {
+              clip: rect(0, $circle-size/2, $circle-size, 0);
+              background: $circle-color;
+            }
+          }
+
+          .ko-progress-circle__overlay {
+            width: $inset-size;
+            height: $inset-size;
+            position: absolute;
+            margin-left: ($circle-size - $inset-size)/2;
+            margin-top: ($circle-size - $inset-size)/2;
+            background-color: $inset-color;
+            border-radius: 50%;
+          }
+
+          $i: 0;
+          $increment: 180deg / 100;
+
+          @while $i <= 100 {
+            &[data-progress="#{$i}"] {
+              .ko-progress-circle__slice.full,
+              .ko-progress-circle__fill {
+                transform: rotate($increment * $i);
+              }
+
+              .ko-progress-circle__fill.ko-progress-circle__bar {
+                transform: rotate($increment * $i * 2);
+              }
+              $i: $i + 1;
+            }
+          }
         }
       }
-    }
-
-    .form-container {
-      margin: 2rem auto;
     }
   }
 }

@@ -8,12 +8,12 @@ const Navbar = () => {
     {
       id: 1,
       path: '/',
-      text: 'Books',
+      text: 'BOOKS',
     },
     {
       id: 2,
       path: '/categories',
-      text: 'Categories',
+      text: 'CATEGORIES',
     },
   ];
 
@@ -45,8 +45,11 @@ const Navbar = () => {
             ))}
           </ul>
           <div className="d-flex align-items-center">
-            <span className="text-reset me-3">
-              <FontAwesomeIcon icon={faUser} />
+            <span className="login">
+              <FontAwesomeIcon
+                icon={faUser}
+                style={{ color: '#0290ff' }}
+              />
             </span>
           </div>
         </div>
