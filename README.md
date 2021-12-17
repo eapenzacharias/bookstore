@@ -1,4 +1,5 @@
-
+[![Netlify Status](https://api.netlify.com/api/v1/badges/acb22031-12f9-482c-9fec-f16fc885365d/deploy-status)](https://app.netlify.com/sites/librarycms/deploys) [![Linters](https://github.com/eapenzacharias/bookstore/actions/workflows/linters.yml/badge.svg)](https://github.com/eapenzacharias/bookstore/actions/workflows/linters.yml) 
+[![Maintainability](https://api.codeclimate.com/v1/badges/3c99a2b29cff164c3588/maintainability)](https://codeclimate.com/github/eapenzacharias/bookstore/maintainability)
 # Bookstore
 
 > REACT app to manage your books
